@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"godrive/godrive/drive"
 )
 
@@ -9,7 +10,7 @@ func main() {
 	if err != nil {
 		panic(err.Error())
 	}
-	drive.Info()
+	fmt.Println(drive.Info())
 }
 
 /*

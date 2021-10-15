@@ -8,6 +8,10 @@ var apis = map[string]*url.URL{
 		Scheme: "https",
 		Host:   "www.googleapis.com",
 		Path:   "drive/v3/about",
-		//Query:  "fields=",
+	},
+	"list": &url.URL{
+		Scheme: "https",
+		Host:   "www.googleapis.com",
+		Path:   "drive/v3/files",
 	},
 }
