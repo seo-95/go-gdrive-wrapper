@@ -1,0 +1,51 @@
+syntax="proto3";
+
+package proto;
+
+option go_package = "github.com/protocolbuffers/protobuf/examples/go/tutorialpb";
+
+// compile with 
+//      $protoc -I=godrive/proto --go_out=./ godrive/proto/responses.proto
+
+message About {
+    string Kind = 1;
+    User User = 2;
+    StorageQuota StorageQuota = 3;
+    map<string, ListOfString> ImportFormats = 4;
+    map<string, ListOfString> ExportFormats = 5;
+    map<string, int32> MaxImportSizes = 6;
+    int32 MaxUploadSize = 7;
+    bool AppInstalled = 8;
+    repeated string FolderColorPalette = 9;
+    repeated DriveTheme TeamDriveThemes = 10;
+    repeated DriveTheme DriveTheme = 11;
+    bool CanCreateTeamDrives = 12;
+    bool CanCreateDrives = 13;
+}
+
+message User {
+    string Kind = 1;
+    string DisplayName = 2;
+    string PhotoLink = 3;
+    bool Me = 4;
+    string PermissionId = 5;
+    string EmailAddress = 6;
+}
+
+message StorageQuota {
+    int32 Limit = 1;
+    int32 Usage = 2;
+    int32 UsageInDrive = 3;
+    int32 UsageInDriveTrash = 4;
+}
+
+message DriveTheme {
+    string Id = 1;
+    string BackgroundImageLink = 2;
+    string ColorRgb = 3;
+}
+
+message ListOfString {
+    repeated string name = 1;
+}
+
